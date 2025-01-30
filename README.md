@@ -1,4 +1,4 @@
-# 🔐 Password Cracker - Educational Edition
+# 🔐 Password Cracker 
 
 
 ## 📌 **Descrição**
