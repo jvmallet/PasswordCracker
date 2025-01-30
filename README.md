@@ -1,9 +1,5 @@
 # 🔐 Password Cracker - Educational Edition
 
-![Password Cracker](https://img.shields.io/badge/Password%20Cracker-Educational-red)
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
-![Security](https://img.shields.io/badge/Security-Offensive%20Pentesting-orange)
-
 
 ## 📌 **Descrição**
 Este é um **Password Cracker** projetado para demonstrar **como senhas fracas podem ser facilmente quebradas usando técnicas de ataque de dicionário**. O objetivo é educar sobre a **importância do uso de senhas seguras** e **hashing robusto** para armazenar credenciais.
