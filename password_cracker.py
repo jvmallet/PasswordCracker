@@ -33,8 +33,8 @@ hashes_path = "hashes/hashed_password.txt"
 try:
     with open(hashes_path, "r", encoding="utf-8") as file:
         lines = [line.strip() for line in file.readlines() if line.strip()]  
-        for i in range(0, len(lines), 6):  # Processa em blocos de 6 linhas
-            if i + 5 >= len(lines):  # Evita erro de índice
+        for i in range(0, len(lines), 6): 
+            if i + 5 >= len(lines):  # Evita erro de indice
                 print(f" Erro: entrada incompleta na linha {i}, ignorando.")
                 continue
 
@@ -57,7 +57,6 @@ except FileNotFoundError:
     print(f"Erro: arquivo de hashes '{hashes_path}' não encontrado")
     exit()
 
-# Executa ataque de dicionário
 senhas_quebradas = set()
 
 print("\n Iniciando ataque de dicionário")
@@ -65,14 +64,13 @@ for tentativa in tqdm(wordlist, desc="Testando senhas"):
     for hash_entry in hashes:
         senha_original = hash_entry["senha"]
         if senha_original in senhas_quebradas:
-            continue  # Pula se a senha já foi quebrada
+            continue  # Pula se a senha ja foi quebrada
         
         for tipo, hash_val in hash_entry.items():
             if tipo != "senha" and verificar_senha(tipo, hash_val, tentativa):
                 print(f"senha quebrada {tipo}: {tentativa}")
                 senhas_quebradas.add(senha_original)
 
-# 📌 Salvar os resultados em um arquivo
 if senhas_quebradas:
     with open("senha_quebradas.txt", "w") as file:
         for senha in senhas_quebradas:
